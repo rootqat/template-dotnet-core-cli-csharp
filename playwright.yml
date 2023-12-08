@@ -1,0 +1,23 @@
+# Specify the Gitpod image
+image:
+  name: mcr.microsoft.com/dotnet/sdk:latest
+
+# List of VS Code extensions to be installed
+vscode:
+  extensions:
+    - ms-dotnettools.csharp
+    - playwright.playwright
+
+# Commands to be executed when the Gitpod workspace is started
+tasks:
+  - name: Install Dependencies
+    command: |
+      dotnet restore
+
+  - name: Build Project
+    command: |
+      dotnet build
+
+  - name: Run Playwright C# Script
+    command: |
+        dotnet run
